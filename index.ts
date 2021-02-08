@@ -59,7 +59,7 @@ async function signWithSigntool(fileName: string) {
         // var command = `"${signtool}" sign /sm /t ${timestampUrl} /sha1 "1d7ec06212fdeae92f8d3010ea422ecff2619f5d"  /n "DanaWoo" ${fileName}`
         var vitalParameterIncluded = false; 
         var timestampUrl : string = core.getInput('timestampUrl');
-        if (timestampUrl == '') {
+        if (timestampUrl === '') {
           timestampUrl = 'http://timestamp.verisign.com/scripts/timstamp.dll'; // 'http://timestamp.digicert.com';//
         }
         var command = `"${signtool}" sign /sm /t ${timestampUrl}`
